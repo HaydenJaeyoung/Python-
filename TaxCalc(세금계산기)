@@ -73,3 +73,6 @@ def customRounding(banNum):
 
 # 기능 실행 
 customRounding(banNum)
+
+
+# 형변환 = 바꿔치기 ex) a = int(a)
