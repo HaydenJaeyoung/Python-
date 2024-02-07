@@ -1,0 +1,75 @@
+from re import X
+
+
+my_name = "nico"
+print("my name is",my_name)
+print(True,False)
+
+
+def say_hello(my_name, your_name="anonymous"): 
+  print("my name is",my_name,"your name",your_name)
+
+say_hello("nico","jaeyoung")
+say_hello("nico")
+
+# 사칙연산 계산기
+
+answer = None
+
+def plus(a=0, b=0):
+  global answer 
+  answer = a + b
+  return answer
+
+def minus(a=0):
+  global answer
+  if answer is None : 
+    answer = 0
+  answer -= a
+  print(answer)
+
+def multi(a=0, b=0):
+  print(a * b)
+
+def div(a=0, b=1):
+  print(a / b)
+
+
+plus (3, 4)
+minus(3)
+
+# None 은 초깃값을 정하지 않고 싶을 때 쓴다. None 값이 들어있는 변수를 연산에 쓰려면 숫자화 할 수 있도록 if None 일경우 0을 할당해준다. 
+# 전역변수를 함수 내에서 사용하고자 하는 경우 global 변수이름 으로 먼저 가져다 쓴다고 선언한다. 이후엔 얼마든지 사용 가능하다. 
+
+
+
+# 세금 계산기 
+
+# 기능 작성 : 세금 계산 정수 출력 
+money = input("세금계산할 금액")
+banNum = 0
+
+def tax_calc(money):
+  money = int(float(money) * 0.35)
+  return money
+
+def tax_printer(tax):
+  print("내야 할 세금:", tax)
+
+# 기능 실행 
+tax_printer(tax_calc(money))
+banNum = tax_calc(money)
+
+
+# 기능 작성 : 1의자리 반올림/반내림 
+def customRounding(banNum):
+  onesJari = int(str(banNum)[-1])
+  if onesJari >= 5:
+    banNum += (10-onesJari)
+  else:
+    banNum -= onesJari
+  print("최종: ", banNum)
+  return banNum
+
+# 기능 실행 
+customRounding(banNum)
